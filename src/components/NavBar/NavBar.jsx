@@ -2,31 +2,41 @@ import { View, Text, StyleSheet, Image } from "react-native";
 import Constants from "expo-constants";
 import agentIcon from "../../../assets/user-circle.webp";
 import mapIcon from "../../../assets/map.webp";
-import { Link } from "react-router-native";
+import { Link, useLocation } from "react-router-native";
 
 export default function NavBar() {
+  const { pathname } = useLocation();
   return (
     <View style={styles.container}>
       <AppBarTab to="/">
-        <TextAndImage image={agentIcon} text="Agentes" />
+        <TextAndImage
+          image={agentIcon}
+          text="Agentes"
+          active={pathname != "/maps"}
+        />
       </AppBarTab>
       <AppBarTab to="/maps">
-        <TextAndImage image={mapIcon} text="Mapas" />
+        <TextAndImage
+          image={mapIcon}
+          text="Mapas"
+          active={pathname === "/maps"}
+        />
       </AppBarTab>
     </View>
   );
 }
 
-const TextAndImage = ({ image, text }) => {
+const TextAndImage = ({ image, text, active }) => {
+  const colorImg = active ? "#f0f0f0" : "#8b978f";
   return (
     <>
-      <Image source={image} tintColor="white" style={styles.icon} />
-      <Text style={{ color: "white" }}>{text}</Text>
+      <Image source={image} tintColor={colorImg} style={styles.icon} />
+      <Text style={{ color: colorImg }}>{text}</Text>
     </>
   );
 };
 
-const AppBarTab = ({ active, children, to }) => {
+const AppBarTab = ({ children, to }) => {
   return (
     <Link to={to} style={styles.iconContainer}>
       {children}

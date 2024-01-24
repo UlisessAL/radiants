@@ -20,7 +20,6 @@ export default function SearchContainer() {
 const FilterTab = ({ to, text }) => {
   const { agentRole } = useParams();
   const active = agentRole === text;
-  console.log(agentRole);
   const linkStyles = [styles.link, active && styles.active];
   return (
     <Link to={to} style={linkStyles}>
