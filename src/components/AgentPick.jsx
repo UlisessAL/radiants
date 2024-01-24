@@ -1,38 +1,42 @@
-import { useEffect, useState } from "react";
 import { View, Text, FlatList, Image, StyleSheet } from "react-native";
+import SkeletonAgents from "./SkeletonLoader/SkeletonAgents";
 
 export default function AgentPick({ agents }) {
+  const fill = Array(23);
+
   return (
-    <>
+    <View style={styles.agentPickContainer}>
       {agents.length <= 0 ? (
-        <Text>Cargando...</Text>
+        <FlatList
+          data={fill}
+          renderItem={() => <SkeletonAgents />}
+          numColumns={4}
+        />
       ) : (
-        <View style={styles.agentPickContainer}>
-          <FlatList
-            data={agents}
-            renderItem={({ item: agent }) => (
-              <View style={styles.agentPick}>
-                <Image
-                  source={{ uri: agent.displayIcon }}
-                  style={styles.agentIcon}
-                />
-                <Text
-                  style={{
-                    color: "white",
-                    alignSelf: "center",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {agent.displayName}{" "}
-                </Text>
-              </View>
-            )}
-            keyExtractor={(item) => item.uuid}
-            numColumns={4}
-          />
-        </View>
+        <FlatList
+          data={agents}
+          renderItem={({ item: agent }) => (
+            <View style={styles.agentPick}>
+              <Image
+                source={{ uri: agent.displayIcon }}
+                style={styles.agentIcon}
+              />
+              <Text
+                style={{
+                  color: "white",
+                  alignSelf: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                {agent.displayName}{" "}
+              </Text>
+            </View>
+          )}
+          keyExtractor={(item) => item.uuid}
+          numColumns={4}
+        />
       )}
-    </>
+    </View>
   );
 }
 

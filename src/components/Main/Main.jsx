@@ -1,16 +1,17 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Constants from "expo-constants";
 import NavBar from "../NavBar/NavBar";
 import { Route, Routes } from "react-router-native";
 import ShowAgents from "../ShowAgents/ShowAgents";
+import ShowMaps from "../ShowMaps/ShowMaps";
 
 export default function Main() {
   return (
     <View style={styles.container}>
       <Routes>
         <Route path="/" element={<ShowAgents />} />
-        <Route path="/maps" element={<Text>Probando</Text>} />
+        <Route path="/maps" element={<ShowMaps />} />
         <Route path="/agents/:agentRole" element={<ShowAgents />} />
       </Routes>
       <StatusBar style="auto" />

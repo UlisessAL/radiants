@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
     marginBottom: Constants.statusBarHeight,
     justifyContent: "space-around",
     flexDirection: "row",
-    backgroundColor: "#80808033",
+    backgroundColor: "#ff46554d",
     height: 80,
   },
   icon: {

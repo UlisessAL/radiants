@@ -12,7 +12,9 @@
     "expo": "~50.0.3",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
+    "react-content-loader": "^6.2.1",
     "react-native": "0.73.2",
+    "react-native-svg": "^14.1.0",
     "react-router-native": "^6.21.3"
   },
   "devDependencies": {
