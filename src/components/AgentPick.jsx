@@ -1,5 +1,6 @@
 import { View, Text, FlatList, Image, StyleSheet } from "react-native";
 import SkeletonAgents from "./SkeletonLoader/SkeletonAgents";
+import { Link } from "react-router-native";
 
 export default function AgentPick({ agents }) {
   const fill = Array(23);
@@ -16,21 +17,9 @@ export default function AgentPick({ agents }) {
         <FlatList
           data={agents}
           renderItem={({ item: agent }) => (
-            <View style={styles.agentPick}>
-              <Image
-                source={{ uri: agent.displayIcon }}
-                style={styles.agentIcon}
-              />
-              <Text
-                style={{
-                  color: "white",
-                  alignSelf: "center",
-                  fontWeight: "bold",
-                }}
-              >
-                {agent.displayName}{" "}
-              </Text>
-            </View>
+            <Link to={`/agent/${agent.uuid}`} style={styles.agentPick}>
+              <AgentInfo agent={agent} />
+            </Link>
           )}
           keyExtractor={(item) => item.uuid}
           numColumns={4}
@@ -39,6 +28,23 @@ export default function AgentPick({ agents }) {
     </View>
   );
 }
+
+const AgentInfo = ({ agent }) => {
+  return (
+    <>
+      <Image source={{ uri: agent.displayIcon }} style={styles.agentIcon} />
+      <Text
+        style={{
+          color: "white",
+          alignSelf: "center",
+          fontWeight: "bold",
+        }}
+      >
+        {agent.displayName}{" "}
+      </Text>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   agentIcon: {

@@ -5,6 +5,7 @@ import NavBar from "../NavBar/NavBar";
 import { Route, Routes } from "react-router-native";
 import ShowAgents from "../ShowAgents/ShowAgents";
 import ShowMaps from "../ShowMaps/ShowMaps";
+import AgentDetailContainer from "../../AgentDetailContainer/AgentDetailContainer";
 
 export default function Main() {
   return (
@@ -13,6 +14,7 @@ export default function Main() {
         <Route path="/" element={<ShowAgents />} />
         <Route path="/maps" element={<ShowMaps />} />
         <Route path="/agents/:agentRole" element={<ShowAgents />} />
+        <Route path="/agent/:agentUuid" element={<AgentDetailContainer />} />
       </Routes>
       <StatusBar style="auto" />
       <NavBar />
