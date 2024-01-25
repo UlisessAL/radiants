@@ -1,18 +1,12 @@
-import {
-  View,
-  Text,
-  Image,
-  StyleSheet,
-  ImageBackground,
-  ScrollView,
-} from "react-native";
+import { View, Text, Image, StyleSheet, ImageBackground } from "react-native";
 import AgentAbilities from "./AgentAbilities/AgentAbilities";
 import MapsForAgents from "./MapsForAgents/MapsForAgents";
+import SkeletonAgentDetail from "../../components/SkeletonLoader/SkeletonAgentDetail";
 export default function AgentDetail({ agent }) {
   return (
     <>
       {agent.displayName == undefined ? (
-        <Text>Cargando...</Text>
+        <SkeletonAgentDetail />
       ) : (
         <>
           <View style={styles.imageContainer}>
@@ -49,9 +43,9 @@ export default function AgentDetail({ agent }) {
 }
 const styles = StyleSheet.create({
   image: {
-    width: "100%", // ajusta el ancho según tus necesidades
-    height: "100%", // ajusta la altura según tus necesidades
-    resizeMode: "cover", // Opciones: 'cover', 'contain', 'stretch', 'repeat', 'center'
+    width: "100%",
+    height: "100%",
+    resizeMode: "cover",
     position: "absolute",
   },
   roleAgent: {
