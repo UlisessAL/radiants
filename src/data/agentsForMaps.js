@@ -1,5 +1,5 @@
 export const agentsForMaps = [
-  { agent: "Sage", recommendedMaps: ["Icebox", "Split", "Ascent"] },
+  { agent: "Sage", recommendedMaps: ["Icebox", "Split", "Ascent", "Lotus"] },
   { agent: "Neon", recommendedMaps: ["Lotus", "Fracture"] },
   { agent: "Gekko", recommendedMaps: ["Ascent", "Pearl", "Haven"] },
   { agent: "Fade", recommendedMaps: ["Ascent", "Haven", "Bind"] },
@@ -9,10 +9,10 @@ export const agentsForMaps = [
     recommendedMaps: ["Ascent", "Fracture", "Pearl", "Bind"],
   },
   { agent: "Raze", recommendedMaps: ["Sunset", "Split", "Bind"] },
-  { agent: "Chamber", recommendedMaps: ["Bind", "Haven"] },
+  { agent: "Chamber", recommendedMaps: ["Bind", "Haven", "Lotus"] },
   { agent: "KAY/O", recommendedMaps: ["Ascent", "Breeze"] },
   { agent: "Skye", recommendedMaps: ["Bind", "Split", "Sunset"] },
-  { agent: "Cypher", recommendedMaps: ["Sunset", "Split", "Breeze"] },
+  { agent: "Cypher", recommendedMaps: ["Sunset", "Split", "Breeze", "Bind"] },
   {
     agent: "Sova",
     recommendedMaps: ["Haven", "Ascent", "Icebox", "Breeze", "Sunset"],
@@ -20,11 +20,11 @@ export const agentsForMaps = [
   { agent: "Killjoy", recommendedMaps: ["Haven", "Ascent", "Icebox"] },
   {
     agent: "Harbor",
-    recommendedMaps: ["Breeze", "Icebox", "Bind", "Pearl"],
+    recommendedMaps: ["Breeze", "Icebox", "Pearl", "Ascent", "Lotus"],
   },
   { agent: "Viper", recommendedMaps: ["Icebox", "Breeze", "Bind"] },
   { agent: "Phoenix", recommendedMaps: ["Ascent"] },
-  { agent: "Astra", recommendedMaps: ["Sunset"] },
+  { agent: "Astra", recommendedMaps: ["Sunset", "Pearl"] },
   { agent: "Brimstone", recommendedMaps: ["Bind", "Sunset"] },
   { agent: "Iso", recommendedMaps: ["Lotus", "Sunset"] },
   { agent: "Yoru", recommendedMaps: ["Bind", "Icebox", "Ascent"] },
