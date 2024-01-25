@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, Image } from "react-native";
-export default function MapPick({ map }) {
+export default function MapPick({ map, key }) {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} key={key}>
       <Image source={{ uri: map.listViewIcon }} style={styles.image} />
       <Text style={styles.nameMap}>{map.displayName}</Text>
     </View>

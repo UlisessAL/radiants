@@ -43,7 +43,7 @@ export default function RecommendedMaps({ nameAgent }) {
       ) : (
         <View style={styles.container}>
           {filteredMaps.map((map) => (
-            <MapPick map={map} />
+            <MapPick map={map} key={map.uui} />
           ))}
         </View>
       )}
