@@ -12,7 +12,7 @@ export default function NavBar() {
         <TextAndImage
           image={agentIcon}
           text="Agentes"
-          active={pathname != "/maps"}
+          active={pathname === "/"}
         />
       </AppBarTab>
       <AppBarTab to="/maps">
