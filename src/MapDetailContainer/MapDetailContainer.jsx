@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { View, Text, ScrollView, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet } from "react-native";
 import { useParams } from "react-router-native";
 import MapDetail from "./MapDetail/MapDetail";
+import SkeletonAgentDetail from "../components/SkeletonLoader/SkeletonAgentDetail";
 export default function MapDetailContainer() {
   const { mapUuid } = useParams();
   const [map, setMap] = useState([]);
@@ -30,7 +31,7 @@ export default function MapDetailContainer() {
   return (
     <View style={styles.container}>
       {map.displayName == undefined ? (
-        <Text>Cargando...</Text>
+        <SkeletonAgentDetail />
       ) : (
         <ScrollView style={styles.scrollStyle}>
           <MapDetail map={map} />

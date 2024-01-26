@@ -2,7 +2,6 @@ import { View, Text, StyleSheet } from "react-native";
 import AgentInfo from "../../../AgentInfo/AgentInfo";
 import { Link } from "react-router-native";
 export default function MapAgents({ filteredAgents }) {
-  console.log(filteredAgents.length);
   return (
     <>
       {filteredAgents.length > 0 && (
