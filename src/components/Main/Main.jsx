@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-native";
 import ShowAgents from "../ShowAgents/ShowAgents";
 import ShowMaps from "../ShowMaps/ShowMaps";
 import AgentDetailContainer from "../../AgentDetailContainer/AgentDetailContainer";
+import MapDetailContainer from "../../MapDetailContainer/MapDetailContainer";
 
 export default function Main() {
   return (
@@ -15,6 +16,7 @@ export default function Main() {
         <Route path="/maps" element={<ShowMaps />} />
         <Route path="/agents/:agentRole" element={<ShowAgents />} />
         <Route path="/agent/:agentUuid" element={<AgentDetailContainer />} />
+        <Route path="/map/:mapUuid" element={<MapDetailContainer />} />
       </Routes>
       <StatusBar style="auto" />
       <NavBar />

@@ -1,12 +1,21 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { Text, StyleSheet, Image } from "react-native";
+import { Link } from "react-router-native";
 export default function MapPick({ map, key }) {
   return (
-    <View style={styles.container} key={key}>
-      <Image source={{ uri: map.listViewIcon }} style={styles.image} />
-      <Text style={styles.nameMap}>{map.displayName}</Text>
-    </View>
+    <Link to={`/map/${map.uuid}`} style={styles.container} key={key}>
+      <ImageAndText image={map.listViewIcon} nameMap={map.displayName} />
+    </Link>
   );
 }
+
+const ImageAndText = ({ image, nameMap }) => {
+  return (
+    <>
+      <Image source={{ uri: image }} style={styles.image} />
+      <Text style={styles.nameMap}>{nameMap}</Text>
+    </>
+  );
+};
 
 const styles = StyleSheet.create({
   image: {
