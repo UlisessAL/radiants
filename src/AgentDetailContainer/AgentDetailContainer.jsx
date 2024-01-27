@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { useParams } from "react-router-native";
 import AgentDetail from "./AgentDetail/AgentDetail";
 export default function AgentDetailContainer() {

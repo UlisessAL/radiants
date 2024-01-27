@@ -6,13 +6,16 @@ import { Link, useLocation } from "react-router-native";
 
 export default function NavBar() {
   const { pathname } = useLocation();
+
   return (
     <View style={styles.container}>
       <AppBarTab to="/">
         <TextAndImage
           image={agentIcon}
           text="Agentes"
-          active={pathname === "/"}
+          active={
+            pathname === "/" || pathname === `/agents/${pathname.slice(8, 20)}`
+          }
         />
       </AppBarTab>
       <AppBarTab to="/maps">
