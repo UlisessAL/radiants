@@ -36,14 +36,18 @@ export default function RecommendedMaps({ nameAgent }) {
     <>
       {maps.length <= 0 ? (
         <>
-          {fillMap.map(() => (
-            <SkeletonMaps />
+          {fillMap.map((a, index) => (
+            <View key={index} style={{ flex: 1 }}>
+              <SkeletonMaps />
+            </View>
           ))}
         </>
       ) : (
         <View style={styles.container}>
           {filteredMaps.map((map) => (
-            <MapPick map={map} key={map.uui} />
+            <View key={map.uuid} style={{ flex: 1 }}>
+              <MapPick map={map} key={map.uui} />
+            </View>
           ))}
         </View>
       )}

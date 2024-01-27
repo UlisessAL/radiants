@@ -1,16 +1,33 @@
 import { useState } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 export default function AgentAbilities({ abilities }) {
   const [selectedSkill, setSelectedSkill] = useState(abilities[0]);
   const selectSkill = (skill) => {
     setSelectedSkill(skill);
   };
+
+  const whichAbilityIs = (abilityName) => {
+    switch (abilityName) {
+      case "Ability1":
+        return "Q:";
+      case "Ability2":
+        return "E:";
+      case "Grenade":
+        return "C:";
+      case "Ultimate":
+        return "X:";
+      default:
+        "";
+        break;
+    }
+  };
+
   return (
     <>
       <View style={styles.abilitieContainer}>
         {abilities.map((ability) => (
           <View key={ability.displayName}>
-            <TouchableOpacity onPress={() => selectSkill(ability)}>
+            <Pressable onPress={() => selectSkill(ability)}>
               <Image
                 source={{ uri: ability.displayIcon }}
                 style={styles.imageAbility}
@@ -20,12 +37,14 @@ export default function AgentAbilities({ abilities }) {
                     : "#8b978f"
                 }
               />
-            </TouchableOpacity>
+            </Pressable>
           </View>
         ))}
       </View>
       <View style={styles.skillDescription}>
-        <Text style={styles.nameSkill}>{selectedSkill.displayName}</Text>
+        <Text style={styles.nameSkill}>
+          {whichAbilityIs(selectedSkill.slot)} {selectedSkill.displayName}
+        </Text>
         <Text style={styles.description}>{selectedSkill.description}</Text>
       </View>
     </>
