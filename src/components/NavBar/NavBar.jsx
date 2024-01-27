@@ -3,6 +3,7 @@ import Constants from "expo-constants";
 import agentIcon from "../../../assets/user-circle.webp";
 import mapIcon from "../../../assets/map.webp";
 import { Link, useLocation } from "react-router-native";
+import weaponIcon from "../../../assets/weaponIcon.webp";
 
 export default function NavBar() {
   const { pathname } = useLocation();
@@ -23,6 +24,13 @@ export default function NavBar() {
           image={mapIcon}
           text="Mapas"
           active={pathname === "/maps"}
+        />
+      </AppBarTab>
+      <AppBarTab to="/weapons">
+        <TextAndImage
+          image={weaponIcon}
+          text="Armas"
+          active={pathname === "/weapons"}
         />
       </AppBarTab>
     </View>

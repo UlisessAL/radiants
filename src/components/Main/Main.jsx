@@ -7,6 +7,8 @@ import ShowAgents from "../ShowAgents/ShowAgents";
 import ShowMaps from "../ShowMaps/ShowMaps";
 import AgentDetailContainer from "../../AgentDetailContainer/AgentDetailContainer";
 import MapDetailContainer from "../../MapDetailContainer/MapDetailContainer";
+import ShowWeapons from "../ShowWeapons/ShowWeapons";
+import WeaponDetailContainer from "../WeaponDetailContainer/WeaponDetailContainer";
 
 export default function Main() {
   return (
@@ -17,6 +19,8 @@ export default function Main() {
         <Route path="/agents/:agentRole" element={<ShowAgents />} />
         <Route path="/agent/:agentUuid" element={<AgentDetailContainer />} />
         <Route path="/map/:mapUuid" element={<MapDetailContainer />} />
+        <Route path="/weapons" element={<ShowWeapons />} />
+        <Route path="/weapon/:weaponUuid" element={<WeaponDetailContainer />} />
       </Routes>
       <StatusBar style="auto" />
       <NavBar />
