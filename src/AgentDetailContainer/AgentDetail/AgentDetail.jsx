@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     backgroundColor: "#0f1923",
-    minHeight: 570,
+    minHeight: 470,
   },
   backgroundImage: {
     flex: 1,

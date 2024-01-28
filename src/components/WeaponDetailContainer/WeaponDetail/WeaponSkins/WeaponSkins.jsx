@@ -4,7 +4,7 @@ export default function WeaponSkins({ skins }) {
   return (
     <View style={styles.container}>
       {skins.map((skin) => (
-        <View style={styles.skinContainer}>
+        <View style={styles.skinContainer} key={skin.uuid}>
           <SkinPick skin={skin} />
         </View>
       ))}

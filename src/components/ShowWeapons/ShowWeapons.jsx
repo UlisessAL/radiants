@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import { View, Text, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import SkeletonMaps from "../SkeletonLoader/SkeletonMaps";
-import MapPick from "../MapPick/MapPick";
 import WeaponPick from "./WeaponPick/WeaponPick";
 export default function ShowWeapons() {
   const [weapons, setWeapons] = useState([]);

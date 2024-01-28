@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { View, StyleSheet, ScrollView } from "react-native";
 import { useParams } from "react-router-native";
 import AgentDetail from "./AgentDetail/AgentDetail";
+import GoBack from "../components/GoBack/GoBack";
 export default function AgentDetailContainer() {
   const { agentUuid } = useParams();
   const [agent, setAgent] = useState([]);
@@ -29,6 +30,7 @@ export default function AgentDetailContainer() {
 
   return (
     <View style={styles.container}>
+      <GoBack to={"/"} />
       <ScrollView>
         <View style={styles.containerAgent}>
           <AgentDetail agent={agent} />

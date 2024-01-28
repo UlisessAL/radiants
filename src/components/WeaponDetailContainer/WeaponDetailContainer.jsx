@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView } from "react-native";
 import { useParams } from "react-router-native";
 import SkeletonAgentDetail from "../SkeletonLoader/SkeletonAgentDetail";
 import WeaponDetail from "./WeaponDetail/WeaponDetail";
+import GoBack from "../GoBack/GoBack";
 export default function WeaponDetailContainer() {
   const { weaponUuid } = useParams();
   const [weapon, setWeapon] = useState([]);
@@ -30,6 +31,7 @@ export default function WeaponDetailContainer() {
 
   return (
     <View style={styles.container}>
+      <GoBack to={"/weapons"} />
       {weapon <= 0 ? (
         <SkeletonAgentDetail />
       ) : (

@@ -16,7 +16,7 @@ export default function WeaponDetail({ weapon }) {
             </Text>
           </View>
         )}
-        {weapon.weaponStats && weapon.weaponStats.damageRanges > 0 && (
+        {weapon.weaponStats && weapon.weaponStats.damageRanges.length > 1 && (
           <TableForNormalWeapons weapon={weapon} />
         )}
         {weapon.weaponStats && weapon.weaponStats.damageRanges.length == 1 && (
@@ -123,7 +123,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#2b2a29",
-    marginTop: 20,
   },
   titleWeapon: {
     fontSize: 50,

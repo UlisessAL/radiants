@@ -3,6 +3,7 @@ import { View, ScrollView, StyleSheet } from "react-native";
 import { useParams } from "react-router-native";
 import MapDetail from "./MapDetail/MapDetail";
 import SkeletonAgentDetail from "../components/SkeletonLoader/SkeletonAgentDetail";
+import GoBack from "../components/GoBack/GoBack";
 export default function MapDetailContainer() {
   const { mapUuid } = useParams();
   const [map, setMap] = useState([]);
@@ -30,6 +31,7 @@ export default function MapDetailContainer() {
 
   return (
     <View style={styles.container}>
+      <GoBack to={"/maps"} />
       {map.displayName == undefined ? (
         <SkeletonAgentDetail />
       ) : (
@@ -63,22 +65,5 @@ const styles = StyleSheet.create({
   },
   scrollStyle: {
     flex: 1,
-  },
-  nameContainer: {
-    height: 120,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  mapSizeTitle: {
-    color: "#8b978f",
-    fontSize: 30,
-  },
-  containerInfo: {
-    padding: 20,
-  },
-  mapSize: {
-    width: 350,
-    height: 350,
-    alignContent: "center",
   },
 });

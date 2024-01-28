@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     color: "#383e3a",
   },
   imageMap: {
-    height: 600,
+    height: 500,
     width: "100%",
     flex: 1,
     objectFit: "cover",
